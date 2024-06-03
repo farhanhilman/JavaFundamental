@@ -1,7 +1,11 @@
 package com.juaracoding;
 
+import java.util.Scanner;
+
 public class MethodJava {
     public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
 
         kotak(5);
         kotak(10);
@@ -19,6 +23,12 @@ public class MethodJava {
         }
         String [] kendaraan = {"mobil","motor","pesawat","kereta"};
         System.out.println(cariKataTerpanjang(kendaraan));
+        System.out.println("Menghitung luas kotak \nMasukkan panjang : ");
+        int panjang = scanner.nextInt();
+        System.out.println("masukkan lebar : ");
+        int lebar = scanner.nextInt();
+        double luas = hitung(panjang,lebar);
+        System.out.println("luas kotak adalah : " + luas);
     }
 
     //membuat kotak dari "*"
@@ -62,8 +72,8 @@ public class MethodJava {
 
     //Penggunaan boolean untuk login
     public static boolean isLogin(String chUsername, String password){
-        boolean isLogin1 = chUsername.equals("farhan") && password.equals("123");
-        if (isLogin1){
+        boolean isLogin = chUsername.equals("farhan") && password.equals("123");
+        if (isLogin){
             return true;
         } else {
             return false;
@@ -80,6 +90,10 @@ public class MethodJava {
         }
 
         return "Kata terpanjang adalah " + kataTerpanjang;
+    }
+
+    static int hitung(int panjang, int lebar){
+        return panjang * lebar;
     }
 
 }
