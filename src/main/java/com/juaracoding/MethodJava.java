@@ -16,7 +16,7 @@ public class MethodJava {
         pajakTanah(luasTanahA);
         pajakTanah(luasTanahB);
         System.out.println(userInfo("farhan", "1671082202010006"));
-        if (isLogin("farhan", "123")){
+        if (isLogin()){
             System.out.println("redirect ke dashboard");
         } else {
             System.out.println("invalid login");
@@ -71,7 +71,13 @@ public class MethodJava {
     }
 
     //Penggunaan boolean untuk login
-    public static boolean isLogin(String chUsername, String password){
+    public static boolean isLogin(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Masukkan nama : ");
+        String chUsername = scanner.nextLine();
+        System.out.println("masukkan password : ");
+        String password = scanner.nextLine();
         boolean isLogin = chUsername.equals("farhan") && password.equals("123");
         if (isLogin){
             return true;
