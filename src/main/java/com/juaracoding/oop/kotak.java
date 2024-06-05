@@ -1,6 +1,6 @@
 package com.juaracoding.oop;
 
-public class Kotak {
+public class Kotak extends BidangDatar {
 
     int sisi;
 
@@ -8,12 +8,16 @@ public class Kotak {
         this.sisi = sisi;
     }
 
-    void draw() {
+    public void draw() {
         for (int i = 1; i <= sisi; i++) {
             for (int j = 1; j <= sisi; j++) {
                 System.out.print("*");
             }
             System.out.println();
         }
+    }
+
+    public void luas(){
+        System.out.println("luas kotak: " + sisi * sisi);
     }
 }
